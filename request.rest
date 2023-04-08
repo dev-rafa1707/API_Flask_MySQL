@@ -1,0 +1,21 @@
+
+// Get All Cars
+GET http://localhost:5000/cars
+ 
+###
+
+// Create Car
+POST http://localhost:5000/cars
+Content-Type: application/json
+
+  {
+  "id":"4",
+  "brand":"KIA",
+  "model":"Sportage",
+  "year":2010
+ }
+
+###
+
+
+
