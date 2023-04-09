@@ -7,7 +7,7 @@ CREATE
 UPDATE
 DELETE
 
-Para as últimas (Update e Delete precisa ainda ser desenvolvido) a funcionalidade de buscar por ID
+
 
 
 1. criar ambiente virtual
