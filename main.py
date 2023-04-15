@@ -5,7 +5,7 @@ from bd import Cars
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
-
+#GetAll
 @app.route('/cars', methods=['GET'])
 def get_cars():
     return make_response(
@@ -13,6 +13,21 @@ def get_cars():
                 data=Cars)
     )
 
+
+
+#Get by id
+@app.route('/cars/<int:id>', methods=['GET'])
+def get_car(id):
+    for car in Cars:
+        if car['id'] == id:
+            return make_response(
+                jsonify(message='Car',
+                        data=car)
+            )
+
+
+
+# Create
 @app.route('/cars', methods=['POST'])
 def create_car():
     car = request.json
