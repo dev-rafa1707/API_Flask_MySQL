@@ -56,6 +56,23 @@ def update_car(id):
                         data=car   
                 )
             )
+        
+
+#Delete
+@app.route('/cars/<int:id>', methods=['DELETE'])
+def delete_car(id):
+    for car in Cars:
+        if car['id']== id:
+            # del(car)
+            del car['id']
+            del car['brand']
+            del car['model']
+            del car['year']
+            return  make_response(
+                jsonify(message='OK',
+                data=''
+                )
+            )
 
 
 
