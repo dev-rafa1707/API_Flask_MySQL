@@ -1,17 +1,61 @@
 from flask import Flask, make_response, jsonify, request
-from bd import Cars
+from flask_mysqldb import MySQL
+from dotenv import load_dotenv
+load_dotenv()
+
 
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
+# Required
+app.config["MYSQL_HOST"] = 'DB_HOST'
+app.config["MYSQL_USER"] = 'DB_USER'
+app.config["MYSQL_PASSWORD"] = 'DB_PASSWORD'
+app.config["MYSQL_DB"] = 'DB_NAME'
+
+
+
+
+mysql = MySQL(app)
+
+
+
 #GetAll
-@app.route('/cars', methods=['GET'])
-def get_cars():
+@app.route('/vendas', methods=['GET'])
+def getAll():
+    cur = mysql.connection.cursor()
+    comando = f'SELECT * FROM vendas'
+    cur.execute(comando)
+    resposta = cur.fetchall()
     return make_response(
-        jsonify(message='Cars List',
-                data=Cars)
+        jsonify(message='List',
+                data=resposta)
     )
+
+
+#READ ALL
+# def getAll():
+#     comando = f'SELECT * FROM vendas'
+#     cursor.execute(comando)
+#     resultado = cursor.fetchall()
+#     return resultado
+
+
+# @app.route("/")
+# def users():
+#     cur = mysql.connection.cursor()
+#     cur.execute("""SELECT user, host FROM mysql.user""")
+#     rv = cur.fetchall()
+#     return str(rv)
+
+
+
+
+
+
+
+
 
 
 
