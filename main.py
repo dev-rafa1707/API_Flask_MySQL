@@ -39,7 +39,23 @@ def create_car():
     ) 
 
  
-
+#Update
+@app.route('/cars/<int:id>', methods=['PUT'])
+def update_car(id):
+    new_car = request.json
+    for car in Cars:
+        print(car['id'])
+        if car['id'] == id:
+            # car = new_car
+            car['id'] = new_car['id']
+            car['brand'] = new_car['brand']
+            car['model'] = new_car['model']
+            car['year'] = new_car['year']
+            return make_response(
+                jsonify(message='Successful updated',
+                        data=car   
+                )
+            )
 
 
 
