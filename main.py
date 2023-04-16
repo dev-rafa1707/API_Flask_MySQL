@@ -21,10 +21,10 @@ mysql = MySQL(app)
 
 
 #GetAll
-@app.route('/vendas', methods=['GET'])
+@app.route('/cars', methods=['GET'])
 def getAll():
     cur = mysql.connection.cursor()
-    comando = f'SELECT * FROM vendas'
+    comando = f'SELECT * FROM cars'
     cur.execute(comando)
     resposta = cur.fetchall()
     return make_response(
@@ -47,14 +47,6 @@ def getAll():
 #     cur.execute("""SELECT user, host FROM mysql.user""")
 #     rv = cur.fetchall()
 #     return str(rv)
-
-
-
-
-
-
-
-
 
 
 
