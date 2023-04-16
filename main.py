@@ -1,5 +1,6 @@
 from flask import Flask, make_response, jsonify, request
 from flask_mysqldb import MySQL
+import os
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -9,12 +10,10 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 # Required
-app.config["MYSQL_HOST"] = 'DB_HOST'
-app.config["MYSQL_USER"] = 'DB_USER'
-app.config["MYSQL_PASSWORD"] = 'DB_PASSWORD'
-app.config["MYSQL_DB"] = 'DB_NAME'
-
-
+app.config["MYSQL_HOST"] = os.environ.get('DB_HOST')
+app.config["MYSQL_USER"] = os.environ.get('DB_USER')
+app.config["MYSQL_PASSWORD"] = os.environ.get('DB_PASSWORD')
+app.config["MYSQL_DB"] = os.environ.get('DB_NAME')
 
 
 mysql = MySQL(app)
