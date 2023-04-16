@@ -4,6 +4,17 @@ GET http://localhost:5000/cars
  
 ###
 
+// Get Car by Id
+GET http://localhost:5000/cars/1
+
+
+
+
+
+
+
+
+###
 // Create Car
 POST http://localhost:5000/cars
 Content-Type: application/json

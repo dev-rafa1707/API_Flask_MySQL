@@ -51,15 +51,26 @@ def getAll():
 
 
 #Get by id
-@app.route('/cars/<int:id>', methods=['GET'])
-def get_car(id):
-    for car in Cars:
-        if car['id'] == id:
-            return make_response(
-                jsonify(message='Car',
-                        data=car)
-            )
+# @app.route('/cars/<int:id>', methods=['GET'])
+# def get_car(id):
+#     for car in Cars:
+#         if car['id'] == id:
+#             return make_response(
+#                 jsonify(message='Car',
+#                         data=car)
+#             )
 
+#Get by id
+@app.route('/cars/<int:idCar>', methods=['GET'])
+def getById(idCar):
+    cur = mysql.connection.cursor()
+    comando = f'SELECT * FROM cars WHERE idCar = {idCar}'
+    cur.execute(comando)
+    resposta = cur.fetchall()
+    return make_response(
+        jsonify(message="Car by Id",
+                data=resposta)
+    )
 
 
 # Create
