@@ -26,10 +26,22 @@ def getAll():
     cur = mysql.connection.cursor()
     comando = f'SELECT * FROM cars'
     cur.execute(comando)
-    resposta = cur.fetchall()
+    myCars = cur.fetchall()
+
+    cars = list()
+    for car in myCars:
+        cars.append(
+            {
+                'idCar':car[0],
+                'brand':car[1],
+                'model':car[2],
+                'yearProd':car[3]
+            }
+        )
+
     return make_response(
         jsonify(message='List',
-                data=resposta)
+                data=cars)
     )
 
 
@@ -66,10 +78,22 @@ def getById(idCar):
     cur = mysql.connection.cursor()
     comando = f'SELECT * FROM cars WHERE idCar = {idCar}'
     cur.execute(comando)
-    resposta = cur.fetchall()
+    myCar = cur.fetchall()
+
+    car = list()
+    for car in myCar:
+        car.append(
+            {
+                'idCar':car[0],
+                'brand':car[1],
+                'model':car[2],
+                'yearProd':car[3]
+            }
+        )
+
     return make_response(
         jsonify(message="Car by Id",
-                data=resposta)
+                data=car)
     )
 
 
@@ -85,6 +109,13 @@ def create_car():
     ) 
 
  
+# @app.route('/cars', methods=['POST'])
+# def createCar():
+
+
+
+
+
 #Update
 @app.route('/cars/<int:id>', methods=['PUT'])
 def update_car(id):
