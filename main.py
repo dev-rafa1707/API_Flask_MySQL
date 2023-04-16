@@ -45,32 +45,6 @@ def getAll():
     )
 
 
-#READ ALL
-# def getAll():
-#     comando = f'SELECT * FROM vendas'
-#     cursor.execute(comando)
-#     resultado = cursor.fetchall()
-#     return resultado
-
-
-# @app.route("/")
-# def users():
-#     cur = mysql.connection.cursor()
-#     cur.execute("""SELECT user, host FROM mysql.user""")
-#     rv = cur.fetchall()
-#     return str(rv)
-
-
-
-#Get by id
-# @app.route('/cars/<int:id>', methods=['GET'])
-# def get_car(id):
-#     for car in Cars:
-#         if car['id'] == id:
-#             return make_response(
-#                 jsonify(message='Car',
-#                         data=car)
-#             )
 
 #Get by id
 @app.route('/cars/<int:idCar>', methods=['GET'])
@@ -80,21 +54,22 @@ def getById(idCar):
     cur.execute(comando)
     myCar = cur.fetchall()
 
-    car = list()
-    for car in myCar:
-        car.append(
-            {
-                'idCar':car[0],
-                'brand':car[1],
-                'model':car[2],
-                'yearProd':car[3]
-            }
-        )
+    car = [
+        {
+            'idCar':myCar[0][0],
+            'brand':myCar[0][1],
+            'model':myCar[0][2],
+            'yearProd':myCar[0][3]
+        }
+    ]
 
     return make_response(
         jsonify(message="Car by Id",
                 data=car)
     )
+
+
+
 
 
 # Create
