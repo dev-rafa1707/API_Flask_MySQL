@@ -74,9 +74,13 @@ def getById(idCar):
 
 # Create
 @app.route('/cars', methods=['POST'])
-def create_car():
+def createCar():
     car = request.json
-    Cars.append(car)
+    cur = mysql.connection.cursor()
+    comando = f"""INSERT INTO cars (brand, model, yearProd) VALUES ("{car['brand']}","{car['model']}",{car['yearProd']})"""
+    cur.execute(comando)
+    cur.commit()
+
     return make_response(
         jsonify(message='Successful registration',
                 data=car
@@ -84,8 +88,7 @@ def create_car():
     ) 
 
  
-# @app.route('/cars', methods=['POST'])
-# def createCar():
+
 
 
 
