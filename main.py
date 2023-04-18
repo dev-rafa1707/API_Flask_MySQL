@@ -70,7 +70,7 @@ def getById(idCar):
 
 
 
-# Create
+#Create
 @app.route('/cars', methods=['POST'])
 def createCar():
     car = request.json
@@ -86,7 +86,7 @@ def createCar():
     ) 
 
 
-
+#Update
 @app.route('/cars/<int:idCar>', methods=['PUT'])
 def updateCar(idCar):
     updatedCar = request.json
@@ -104,23 +104,19 @@ def updateCar(idCar):
 
 
 
+
 #Delete
-@app.route('/cars/<int:id>', methods=['DELETE'])
-def delete_car(id):
-    for car in Cars:
-        if car['id']== id:
-            # del(car)
-            del car['id']
-            del car['brand']
-            del car['model']
-            del car['year']
-            return  make_response(
-                jsonify(message='OK',
+@app.route('/cars/<int:idCar>', methods=['DELETE'])
+def deleteCar(idCar):
+    cur = mysql.connection.cursor()
+    comando = f"DELETE FROM cars WHERE idCar = {idCar}"
+    cur.execute(comando)
+    mysql.connection.commit()
+    return  make_response(
+                jsonify(message='Deleted Succesfull',
                 data=''
                 )
             )
-
-
 
 
 

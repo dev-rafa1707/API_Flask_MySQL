@@ -32,3 +32,6 @@ Content-Type: application/json
     "yearProd":2020
   }
 
+###
+// Delete car
+DELETE http://localhost:5000/cars/2
