@@ -21,5 +21,14 @@ Content-Type: application/json
 
 ###
 
+// Update car
+PUT http://localhost:5000/cars/1
+Content-Type: application/json
 
+  {
+    "idCar":1,
+    "band":"Jeep",
+    "model":"Compass",
+    "yearProd":2020
+  }
 
