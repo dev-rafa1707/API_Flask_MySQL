@@ -85,32 +85,11 @@ def createCar():
         )
     ) 
 
- 
-
-
-#Update
-# @app.route('/cars/<int:id>', methods=['PUT'])
-# def update_car(id):
-#     new_car = request.json
-#     for car in Cars:
-#         print(car['id'])
-#         if car['id'] == id:
-#             # car = new_car
-#             car['id'] = new_car['id']
-#             car['brand'] = new_car['brand']
-#             car['model'] = new_car['model']
-#             car['year'] = new_car['year']
-#             return make_response(
-#                 jsonify(message='Successful updated',
-#                         data=car   
-#                 )
-#             )
 
 
 @app.route('/cars/<int:idCar>', methods=['PUT'])
 def updateCar(idCar):
     updatedCar = request.json
-    # print(updatedCar[idCar])
     cur = mysql.connection.cursor()
     comando = f"""UPDATE cars SET band = "{updatedCar['band']}", model = "{updatedCar['model']}", yearProd = {updatedCar['yearProd']} WHERE idCar = {idCar}"""
     cur.execute(comando)
