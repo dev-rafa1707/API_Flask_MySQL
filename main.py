@@ -77,9 +77,9 @@ def getById(idCar):
 def createCar():
     car = request.json
     cur = mysql.connection.cursor()
-    comando = f"""INSERT INTO cars (brand, model, yearProd) VALUES ("{car['brand']}","{car['model']}",{car['yearProd']})"""
+    comando = f"""INSERT INTO cars (band, model, yearProd) VALUES ("{car['band']}","{car['model']}",{car['yearProd']})"""
     cur.execute(comando)
-    cur.commit()
+    mysql.connection.commit()
 
     return make_response(
         jsonify(message='Successful registration',
@@ -112,6 +112,11 @@ def update_car(id):
                 )
             )
         
+
+
+
+
+
 
 #Delete
 @app.route('/cars/<int:id>', methods=['DELETE'])
