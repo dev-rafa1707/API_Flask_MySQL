@@ -25,21 +25,34 @@ CRUD
 (Exclui veículo cadastrado)
 
 
-### Requiriments / Pré-requisitos
+### Requirements / Pré-requisitos
 * Python already installed
 
 * MySQL already installed
 
 
+### How to run the application / Como rodar a aplicação
 
-1. criar ambiente virtual
+1. Download this project from
+(Fazer o download do projeto a partir de)
+
+(Link)[https://github.com/dev-rafa1707/API_Flask_MySQL.git]
+
+2. Move the terminal to the project folder directory
+
+3. Run the script below to create the virtual environment
 python -m venv venv
-2. ativar ambiente virtual
+
+4. Run the script below to activate the virutal environment
 venv/Scripts/activate.bat (windows)
-3. Instalar o flask
+
+5. Run the script below to install Flask
 pip install flask
-4. pip install python-dotenv
-5. Install Flask-MySQLdb
+
+6. Run the script below to install dotenv
+pip install python-dotenv
+
+7. Run the script below to Install Flask-MySQLdb
 pip install flask-mysqldb
 
 
