@@ -56,6 +56,31 @@ pip install python-dotenv
 pip install flask-mysqldb
 
 
+8. Copy .env.example to .env and input the variables as usend in you database
+(Copiar o arquivo .env.example para .env e inserir as variáveis conforme o seu banco de dados)
+<p>DB_HOST=</p>
+<p>DB_USER=</p>
+<p>DB_PASSWORD=</p>
+<p>DB_NAME=</p>
+
+* Create the table "cars" in MySQL
+(Criar a tabela "cars" no MySQL)
+
+create table cars (  
+	idCar int auto_increment,  
+    brand varchar(45) not null,  
+    model varchar(45) not null,
+    yearModel int not null,
+    constraint pk_idCar primary key (idCar)  
+);
+
+
+
+
+
+
+
+
 From Flask
 make_response,
 
