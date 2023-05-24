@@ -98,12 +98,72 @@ mysql.connection.commit()
 myCars = cur.fetchall()
 
 
-From Flask
-make_response,
 
-jsonify
+### How to test the application / Como testar a aplicação
+We are using request.rest the VS Code extension but you can use Postman ou any other tool to make the requests. 
 
-request
-from flask_mysqldb import MySQL
 
-// ajustes readme
+
+### Endpoints
+// Get All Cars
+GET http://localhost:5000/cars
+ 
+###
+
+// Get Car by Id
+GET http://localhost:5000/cars/2
+
+
+###
+// Create Car
+POST http://localhost:5000/cars
+Content-Type: application/json
+
+  {
+    "band":"KIA",
+    "model":"Sportage",
+    "yearProd":2010
+  }
+
+###
+
+// Update car
+PUT http://localhost:5000/cars/1
+Content-Type: application/json
+
+  {
+    "idCar":1,
+    "band":"Jeep",
+    "model":"Compass",
+    "yearProd":2020
+  }
+
+###
+// Delete car
+DELETE http://localhost:5000/cars/2
+
+
+
+
+### Flask tools
+* make_response,
+
+* jsonify
+
+* request
+
+* flask_mysqldb (MySQL)
+
+
+
+
+
+### Author
+Any question or issue, please contact me
+dev-rafa1707
+<rafa1707@gmail.com>
+
+
+
+### License
+No License required 
