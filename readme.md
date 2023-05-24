@@ -25,7 +25,11 @@ CRUD
 (Exclui veículo cadastrado)
 
 
-### Pré-requisitos
+### Requiriments / Pré-requisitos
+* Python already installed
+
+* MySQL already installed
+
 
 
 1. criar ambiente virtual
