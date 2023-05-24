@@ -6,15 +6,19 @@ Essa API foi projetada para ter um CRUD completo inclusive conectar ao banco de 
 ### Status do Projeto:
 Finalizado
 
+### Features
+CRUD
 
+* Criar novo registro de veículo (Create)
 
+* Consultar os veículos cadastrados (Get All)
 
+* Consulta veículo por codigo (Get by id)
 
+* Edita veículo cadastrado (Update by id)
 
-GETALL
-CREATE
-UPDATE
-DELETE
+* Exclui veículo (Delete)
+
 
 
 
