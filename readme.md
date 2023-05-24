@@ -54,6 +54,7 @@ pip install python-dotenv
 
 7. Run the script below to Install Flask-MySQLdb
 pip install flask-mysqldb
+(Link) [https://pypi.org/project/Flask-MySQLdb/]
 
 
 8. Copy .env.example to .env and input the variables as usend in you database
@@ -76,15 +77,25 @@ create table cars (
 );
 
 
-* Use main.py to run the server
-Server will listen on localhosto PORT 5000
+10. Use main.py to run the server
+Server will listen on localhost PORT 5000
 http://127.0.0.1:5000/
 
 
 
+### Main commands / Principais comandos
 
+* Cursor
+cur = mysql.connection.cursor()
 
+* comando = "SQLquery"
+cur.execute(comando)
 
+* Update in database / Editar o banco de dados
+mysql.connection.commit()
+
+* Read from database / Ler o banco de dados
+myCars = cur.fetchall()
 
 
 From Flask
