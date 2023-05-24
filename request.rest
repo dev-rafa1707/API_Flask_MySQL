@@ -5,7 +5,7 @@ GET http://localhost:5000/cars
 ###
 
 // Get Car by Id
-GET http://localhost:5000/cars/1
+GET http://localhost:5000/cars/8
 
 
 ###
@@ -14,24 +14,24 @@ POST http://localhost:5000/cars
 Content-Type: application/json
 
   {
-    "band":"KIA",
-    "model":"Sportage",
+    "band":"Fiat",
+    "model":"Marea",
     "yearProd":2010
   }
 
 ###
 
 // Update car
-PUT http://localhost:5000/cars/1
+PUT http://localhost:5000/cars/8
 Content-Type: application/json
 
   {
-    "idCar":1,
-    "band":"Jeep",
-    "model":"Compass",
-    "yearProd":2020
+    "idCar":8,
+    "band":"VolksWagen",
+    "model":"Polo",
+    "yearProd":2022
   }
 
 ###
 // Delete car
-DELETE http://localhost:5000/cars/2
+DELETE http://localhost:5000/cars/8
