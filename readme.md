@@ -63,7 +63,8 @@ pip install flask-mysqldb
 <p>DB_PASSWORD=</p>
 <p>DB_NAME=</p>
 
-* Create the table "cars" in MySQL
+
+9. Create the table "cars" in MySQL
 (Criar a tabela "cars" no MySQL)
 
 create table cars (  
@@ -73,6 +74,11 @@ create table cars (
     yearModel int not null,
     constraint pk_idCar primary key (idCar)  
 );
+
+
+* Use main.py to run the server
+Server will listen on localhosto PORT 5000
+http://127.0.0.1:5000/
 
 
 
