@@ -1,26 +1,31 @@
 # API Python Flask using MySQL database
 API Rest Backend server using Python Flask and MySQL database
 
-Essa API foi projetada para ter um CRUD completo inclusive conectar ao banco de dados MySQL
 
-### Status do Projeto:
-Finalizado
+### Status:
+Finished
+
 
 ### Features
 CRUD
 
-* Criar novo registro de veículo (Create)
+* CREATE new record database
+(Criar novo registro de veículo)
 
-* Consultar os veículos cadastrados (Get All)
+* READ ALL  the records in database
+(Consultar todos os veículos cadastrados)
 
-* Consulta veículo por codigo (Get by id)
+* READ by id
+(Consulta veículo por codigo)
 
-* Edita veículo cadastrado (Update by id)
+* UPDATE by id  Update a record in database using the id
+(Edita veículo cadastrado)
 
-* Exclui veículo (Delete)
+* DELETE a record in database using the id
+(Exclui veículo cadastrado)
 
 
-
+### Pré-requisitos
 
 
 1. criar ambiente virtual
