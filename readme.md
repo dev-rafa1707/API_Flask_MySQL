@@ -1,6 +1,7 @@
-# API Python Flask MySQL
+# API Python Flask using MySQL database
+API Rest Backend server using Python Flask and MySQL database
 
-Essa API foi projetada para ter um CRUD completo inclusive conectar ao bando de dados MySQL
+Essa API foi projetada para ter um CRUD completo inclusive conectar ao banco de dados MySQL
 
 GETALL
 CREATE
