@@ -3,6 +3,14 @@ API Rest Backend server using Python Flask and MySQL database
 
 Essa API foi projetada para ter um CRUD completo inclusive conectar ao banco de dados MySQL
 
+### Status do Projeto:
+Finalizado
+
+
+
+
+
+
 GETALL
 CREATE
 UPDATE
