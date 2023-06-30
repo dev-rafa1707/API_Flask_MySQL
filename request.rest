@@ -5,7 +5,7 @@ GET http://localhost:5000/cars
 ###
 
 // Get Car by Id
-GET http://localhost:5000/cars/9
+GET http://localhost:5000/cars/4
 
 
 ###
@@ -14,9 +14,9 @@ POST http://localhost:5000/cars
 Content-Type: application/json
 
   {
-    "band":"Mitsubishi",
-    "model":"ASX",
-    "yearProd":2015
+    "band":"VW",
+    "model":"Fusca",
+    "yearProd":1979
   }
 
 ###
