@@ -22,14 +22,14 @@ Content-Type: application/json
 ###
 
 // Update car
-PUT http://localhost:5000/cars/1
+PUT http://localhost:5000/cars/12
 Content-Type: application/json
 
   {
-    "idCar":1,
+    "idCar":12,
     "band":"VolksWagen",
-    "model":"Polo",
-    "yearProd":2022
+    "model":"Fusca",
+    "yearProd":1982
   }
 
 ###
